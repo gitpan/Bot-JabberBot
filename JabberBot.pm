@@ -21,7 +21,7 @@ use Jabber::Connection;
 use Jabber::NodeFactory;
 use Class::MethodMaker new_hash_init => 'new', get_set => [ qw{ server port nick password resource name username session session_length roster }];
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub connect {
     my $self = shift;
@@ -83,7 +83,7 @@ sub message {
 	}
 	else { $response = $reply; }
 
-	$self->say({ who => $said->{from},
+	$self->say({ who => $said->{who},
 		     body => $response,
 		     type => $in->attr('type')});  
 		   
@@ -224,6 +224,7 @@ be spammy and might lead to bot abuse.
     Simon Kent - maintainer of Bot::BasicBot
     Mark Fowler - original author of Bot::BasicBot
     DJ Adams - author of Jabber::Connection
+    Tom Hukins - patched 0.02
     everyone on #bots and #pants
 
 =head1 SEE ALSO

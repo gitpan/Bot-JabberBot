@@ -1,4 +1,4 @@
-Bot::JabberBot version 0.01
+Bot::JabberBot version 0.02
 ==========================
 
 Bot::JabberBot provides a simple object interface to a jabber bot, 
